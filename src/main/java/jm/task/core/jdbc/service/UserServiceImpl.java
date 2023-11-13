@@ -28,7 +28,9 @@ public class UserServiceImpl implements UserService {
     }
 
     public List<User> getAllUsers() {
-        return userDaoHibernate.getAllUsers();
+        List<User> users = userDaoHibernate.getAllUsers();
+        users.stream().forEach(System.out::println);
+        return users;
     }
 
     public void cleanUsersTable() {
